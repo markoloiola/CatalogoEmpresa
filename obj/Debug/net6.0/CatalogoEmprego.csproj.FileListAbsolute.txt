@@ -1,0 +1,70 @@
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/appsettings.Development.json
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/appsettings.json
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.exe
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.deps.json
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.runtimeconfig.json
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.pdb
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Humanizer.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/MySqlConnector.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/marco/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.AssemblyReference.cache
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.AssemblyInfoInputs.cache
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.AssemblyInfo.cs
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.CoreCompileInputs.cache
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/scopedcss/bundle/CatalogoEmprego.styles.css
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.CopyComplete
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.dll
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/refint/CatalogoEmprego.dll
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.pdb
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.genruntimeconfig.cache
+C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/ref/CatalogoEmprego.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/appsettings.Development.json
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/appsettings.json
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.deps.json
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.runtimeconfig.json
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/CatalogoEmprego.pdb
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Humanizer.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/MySqlConnector.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.AssemblyReference.cache
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.GeneratedMSBuildEditorConfig.editorconfig
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.AssemblyInfoInputs.cache
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.AssemblyInfo.cs
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.CoreCompileInputs.cache
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.MvcApplicationPartsAssemblyInfo.cs
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.MvcApplicationPartsAssemblyInfo.cache
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/staticwebassets.build.json
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/staticwebassets.development.json
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/scopedcss/bundle/CatalogoEmprego.styles.css
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.csproj.CopyComplete
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/refint/CatalogoEmprego.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.pdb
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.genruntimeconfig.cache
+/home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/ref/CatalogoEmprego.dll
