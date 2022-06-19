@@ -1,4 +1,5 @@
 using CatalogoEmprego.Data;
+using CatalogoEmprego.Dtos.Empresa;
 using CatalogoEmprego.Models;
 using CatalogoEmprego.Serviços;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ public class EmpresaController : ControllerBase
      }
 
     [HttpPost]
-    public ActionResult<Empresa> PostEmpresa([FromBody] Empresa EmpresaNova)
+    public ActionResult<EmpresaResponseDto> PostEmpresa([FromBody] EmpresaCreateUpdateDto EmpresaNova)
     {
 
         var empresa = _empresaServico.AdicionarEmpresa(EmpresaNova);
@@ -37,12 +38,12 @@ public class EmpresaController : ControllerBase
     }
 
     [HttpGet("{id:int}")]
-    public ActionResult<Empresa> GetEmpresa([FromRoute] int id)
+    public ActionResult<EmpresaResponseDto> GetEmpresa([FromRoute] int id)
     {
         
       try
       {
-         Empresa empresa = _empresaServico.RecuperarEmpresa(id);
+         var empresa = _empresaServico.RecuperarEmpresa(id);
          return empresa;
       }
       catch(Exception)

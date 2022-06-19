@@ -1,4 +1,5 @@
 using CatalogoEmprego.Data;
+using CatalogoEmprego.Dtos.Empresa;
 using CatalogoEmprego.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,12 +9,12 @@ public class EmpresaServico
 {
     //Reservado para qualquer regra de negocio do sistema
     //readonly quer dizer somente para leitura
-    
+
     private readonly CatalogoContexto _contexto;
 
     public EmpresaServico([FromServices] CatalogoContexto contexto)
     {
-       _contexto = contexto;
+        _contexto = contexto;
     }
 
     public List<Empresa> RecuperarEmpresas()
@@ -22,22 +23,39 @@ public class EmpresaServico
         return _contexto.Empresas.ToList();
     }
 
-    public Empresa RecuperarEmpresa(int id)
+    public EmpresaResponseDto RecuperarEmpresa(int id)
     {
         var empresa = _contexto.Empresas.SingleOrDefault(empresa => empresa.Id == id);
-      
-        if (empresa is null)
-          throw new Exception("Empresa não encontrada");
 
-       return empresa; 
+        if (empresa is null)
+            throw new Exception("Empresa não encontrada");
+
+        //Mapear do objeto empresa para empresaResponseDto
+        var empresaResposta = new EmpresaResponseDto();
+        empresaResposta.Id = empresa.Id;
+        empresaResposta.NomeFantasia = empresa.NomeFantasia;
+        empresaResposta.Cnpj = empresa.Cnpj;
+        empresaResposta.Cidade = empresa.Cidade;
+        empresaResposta.Estado = empresa.Estado;
+        empresaResposta.Endereco = empresa.Endereco;
+        empresaResposta.Telefone = empresa.Telefone;
+        empresaResposta.Email = empresa.Email;
+
+        return empresaResposta;
     }
 
-    public Empresa AdicionarEmpresa(Empresa empresa)
+    public EmpresaResponseDto AdicionarEmpresa(EmpresaCreateUpdateDto empresaDto)
     {
-        //espaço para regra de negocio, caso a gente precise no futuro tratar alguma propriedade 
-        //calculo de imposto,etc
-        //tem que ser feita no serviço e não no controlador
-        
+        //Mapear de EmpresaCreateUpdateDto para Empresa
+        var empresa = new Empresa()
+        {
+            NomeFantasia = empresaDto.NomeFantasia,
+            Cnpj = empresaDto.Cnpj,
+            Endereco = empresaDto.Endereco,
+            Telefone = empresaDto.Telefone,
+            Email = empresaDto.Email
+        };
+
         //Salvar o empresa no banco de dados
         //adicionadno a empresa no contexto na memoria
         _contexto.Empresas.Add(empresa);
@@ -45,7 +63,19 @@ public class EmpresaServico
         //Comando para salvar que realmente salva no banco de dados
         _contexto.SaveChanges();
 
-        return empresa;
+        //Mapear de Empresa para EmpresaResponseDto
+        var empresaResposta = new EmpresaResponseDto();
+        empresaResposta.Id = empresa.Id;
+        empresaResposta.NomeFantasia = empresa.NomeFantasia;
+        empresaResposta.Cnpj = empresa.Cnpj;
+        empresaResposta.Cidade = empresa.Cidade;
+        empresaResposta.Estado = empresa.Estado;
+        empresaResposta.Endereco = empresa.Endereco;
+        empresaResposta.Telefone = empresa.Telefone;
+        empresaResposta.Email = empresa.Email;
+
+
+        return empresaResposta;
 
     }
 
@@ -55,7 +85,7 @@ public class EmpresaServico
         var empresa = _contexto.Empresas.SingleOrDefault(empresa => empresa.Id == id);
 
         if (empresa is null)
-          throw new Exception("Empresa não encontrada");
+            throw new Exception("Empresa não encontrada");
 
         //Copiar od dados que vieram do cliente
         empresa.RazaoSocial = EmpresaEditado.RazaoSocial;
@@ -79,8 +109,8 @@ public class EmpresaServico
         //Buscar a empresa no bd
         var empresa = _contexto.Empresas.SingleOrDefault(empresa => empresa.Id == id);
 
-        if (empresa  is null)
-           throw new Exception("Empresa não encontrada");
+        if (empresa is null)
+            throw new Exception("Empresa não encontrada");
 
         //Deletar no contexto na memoria
         _contexto.Remove(empresa);
@@ -89,5 +119,5 @@ public class EmpresaServico
         _contexto.SaveChanges();
 
     }
-       
+
 }
