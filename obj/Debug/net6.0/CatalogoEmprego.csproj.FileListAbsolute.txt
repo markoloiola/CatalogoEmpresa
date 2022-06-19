@@ -68,3 +68,5 @@ C:/Users/marco/CatalogoEmprego/obj/Debug/net6.0/ref/CatalogoEmprego.dll
 /home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.pdb
 /home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/CatalogoEmprego.genruntimeconfig.cache
 /home/marko/Área de Trabalho/CatalogoEmprego/obj/Debug/net6.0/ref/CatalogoEmprego.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Mapster.dll
+/home/marko/Área de Trabalho/CatalogoEmprego/bin/Debug/net6.0/Mapster.Core.dll

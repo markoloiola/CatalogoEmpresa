@@ -1,6 +1,7 @@
 using CatalogoEmprego.Data;
 using CatalogoEmprego.Dtos.Empresa;
 using CatalogoEmprego.Models;
+using Mapster;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogoEmprego.Serviços;
@@ -17,10 +18,14 @@ public class EmpresaServico
         _contexto = contexto;
     }
 
-    public List<Empresa> RecuperarEmpresas()
+    public List<EmpresaResponseDto> RecuperarEmpresas()
     {
-        //qualquer regra de negocio  pra aplicaçao
-        return _contexto.Empresas.ToList();
+        return _contexto.Empresas.ProjectToType<EmpresaResponseDto>().ToList();
+        //Pode ser feito igual abaico tbm
+        // var empresas = _contexto.Empresas.ToList();
+        // var empresasResposta = empresas.Adapt<List<EmpresaResponseDto>>();
+        // return empresasResposta;
+        
     }
 
     public EmpresaResponseDto RecuperarEmpresa(int id)
@@ -31,30 +36,34 @@ public class EmpresaServico
             throw new Exception("Empresa não encontrada");
 
         //Mapear do objeto empresa para empresaResponseDto
-        var empresaResposta = new EmpresaResponseDto();
-        empresaResposta.Id = empresa.Id;
-        empresaResposta.NomeFantasia = empresa.NomeFantasia;
-        empresaResposta.Cnpj = empresa.Cnpj;
-        empresaResposta.Cidade = empresa.Cidade;
-        empresaResposta.Estado = empresa.Estado;
-        empresaResposta.Endereco = empresa.Endereco;
-        empresaResposta.Telefone = empresa.Telefone;
-        empresaResposta.Email = empresa.Email;
-
+        //MAPEAMENTO MANUAL
+        // var empresaResposta = new EmpresaResponseDto();
+        // empresaResposta.Id = empresa.Id;
+        // empresaResposta.NomeFantasia = empresa.NomeFantasia;
+        // empresaResposta.Cnpj = empresa.Cnpj;
+        // empresaResposta.Cidade = empresa.Cidade;
+        // empresaResposta.Estado = empresa.Estado;
+        // empresaResposta.Endereco = empresa.Endereco;
+        // empresaResposta.Telefone = empresa.Telefone;
+        // empresaResposta.Email = empresa.Email;
+        //MAPEAMENTO A PARTIR DO MAPSTER DE FORMA AUTOMÁTICA
+        EmpresaResponseDto empresaResposta = empresa.Adapt<EmpresaResponseDto>();
         return empresaResposta;
     }
 
     public EmpresaResponseDto AdicionarEmpresa(EmpresaCreateUpdateDto empresaDto)
     {
-        //Mapear de EmpresaCreateUpdateDto para Empresa
-        var empresa = new Empresa()
-        {
-            NomeFantasia = empresaDto.NomeFantasia,
-            Cnpj = empresaDto.Cnpj,
-            Endereco = empresaDto.Endereco,
-            Telefone = empresaDto.Telefone,
-            Email = empresaDto.Email
-        };
+        //Mapear de EmpresaCreateUpdateDto para Empresa - MANUAL
+        // var empresa = new Empresa()
+        // {
+        //     NomeFantasia = empresaDto.NomeFantasia,
+        //     Cnpj = empresaDto.Cnpj,
+        //     Endereco = empresaDto.Endereco,
+        //     Telefone = empresaDto.Telefone,
+        //     Email = empresaDto.Email
+        // };
+
+        var empresa = empresaDto.Adapt<Empresa>();
 
         //Salvar o empresa no banco de dados
         //adicionadno a empresa no contexto na memoria
@@ -64,22 +73,13 @@ public class EmpresaServico
         _contexto.SaveChanges();
 
         //Mapear de Empresa para EmpresaResponseDto
-        var empresaResposta = new EmpresaResponseDto();
-        empresaResposta.Id = empresa.Id;
-        empresaResposta.NomeFantasia = empresa.NomeFantasia;
-        empresaResposta.Cnpj = empresa.Cnpj;
-        empresaResposta.Cidade = empresa.Cidade;
-        empresaResposta.Estado = empresa.Estado;
-        empresaResposta.Endereco = empresa.Endereco;
-        empresaResposta.Telefone = empresa.Telefone;
-        empresaResposta.Email = empresa.Email;
-
+        var empresaResposta = empresa.Adapt<EmpresaResponseDto>();
 
         return empresaResposta;
 
     }
 
-    public Empresa AtualizarEmpresa(int id, Empresa EmpresaEditado)
+    public EmpresaResponseDto AtualizarEmpresa(int id, EmpresaCreateUpdateDto EmpresaEditado)
     {
         //Buscar a empresa no bd
         var empresa = _contexto.Empresas.SingleOrDefault(empresa => empresa.Id == id);
@@ -87,20 +87,16 @@ public class EmpresaServico
         if (empresa is null)
             throw new Exception("Empresa não encontrada");
 
-        //Copiar od dados que vieram do cliente
-        empresa.RazaoSocial = EmpresaEditado.RazaoSocial;
-        empresa.NomeFantasia = EmpresaEditado.NomeFantasia;
-        empresa.Cnpj = EmpresaEditado.Cnpj;
-        empresa.Cidade = EmpresaEditado.Cidade;
-        empresa.Estado = EmpresaEditado.Estado;
-        empresa.Endereco = EmpresaEditado.Endereco;
-        empresa.Telefone = EmpresaEditado.Telefone;
-        empresa.Email = EmpresaEditado.Email;
+        //Mapeando do EmpresaCreatUpdateDto para Empresa (Objeto existentes)
+        EmpresaEditado.Adapt(empresa);
 
         //salvar as alterações no banco de dados
         _contexto.SaveChanges();
 
-        return empresa;
+        //Mapear de Empresa para EmpresaResponseDto
+        var empresaResposta = empresa.Adapt<EmpresaResponseDto>();
+
+        return empresaResposta;
 
     }
 

@@ -10,6 +10,7 @@ namespace CatalogoEmprego.Controllers;
 [Route("empresas")]
 
 public class EmpresaController : ControllerBase
+
 {
 
       private readonly EmpresaServico _empresaServico;
@@ -31,7 +32,7 @@ public class EmpresaController : ControllerBase
     }
     
     [HttpGet]
-    public ActionResult<List<Empresa>> GetEmpresas()
+    public ActionResult<List<EmpresaResponseDto>> GetEmpresas()
     {
        var empresas = _empresaServico.RecuperarEmpresas();
        return Ok(empresas) ;
@@ -54,7 +55,7 @@ public class EmpresaController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    public ActionResult<Empresa> PutEmpresa([FromRoute] int id, [FromBody] Empresa EmpresaEditado)
+    public ActionResult<EmpresaResponseDto> PutEmpresa([FromRoute] int id, [FromBody] EmpresaCreateUpdateDto EmpresaEditado)
     {      
 
        try
