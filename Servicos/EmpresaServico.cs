@@ -3,6 +3,7 @@ using CatalogoEmprego.Dtos.Empresa;
 using CatalogoEmprego.Models;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CatalogoEmprego.Serviços;
 
@@ -20,7 +21,7 @@ public class EmpresaServico
 
     public List<EmpresaResponseDto> RecuperarEmpresas()
     {
-        return _contexto.Empresas.ProjectToType<EmpresaResponseDto>().ToList();
+        return _contexto.Empresas.AsNoTracking().ProjectToType<EmpresaResponseDto>().ToList();
         //Pode ser feito igual abaico tbm
         // var empresas = _contexto.Empresas.ToList();
         // var empresasResposta = empresas.Adapt<List<EmpresaResponseDto>>();
@@ -30,7 +31,7 @@ public class EmpresaServico
 
     public EmpresaResponseDto RecuperarEmpresa(int id)
     {
-        var empresa = _contexto.Empresas.SingleOrDefault(empresa => empresa.Id == id);
+        var empresa = _contexto.Empresas.AsNoTracking().SingleOrDefault(empresa => empresa.Id == id);
 
         if (empresa is null)
             throw new Exception("Empresa não encontrada");
